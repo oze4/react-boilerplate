@@ -1,16 +1,17 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-      bundle: path.resolve(__dirname, './src/index.js')
+    bundle: path.resolve(__dirname, "./src/index.js")
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        resolve: { extensions: [".js", ".jsx"] },
         use: {
           loader: "babel-loader"
         }
